@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Feedback Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Customer Feedback Analyzer</h1>
+      <p>Gain insights into customer sentiments with sentiment analysis.</p>
+    </header>
+
+    <div class="content">
+      <section id="feedback-input">
+        <h2>Enter Feedback</h2>
+        <textarea id="feedback-text" placeholder="Paste customer feedback here..."></textarea>
+        <button onclick="analyzeFeedback()">Analyze Feedback</button>
+        <div class="file-upload-container">
+          <label for="file-upload" class="custom-file-upload">
+            Choose File
+          </label>
+          <input type="file" id="file-upload" accept=".xlsx" />
+          <button id="upload-btn" onclick="uploadFile()">Upload Excel File</button>
+        </div>
+        <div id="loader" class="loader" style="display:none;"></div>
+      </section>
+
+      <section id="results">
+        <h2>Sentiment Analysis Results</h2>
+        <div class="chart-container">
+          <canvas id="sentimentPieChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <canvas id="sentimentTrendChart"></canvas>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  
+</body>
+</html>
